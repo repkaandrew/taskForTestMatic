@@ -10,22 +10,11 @@ public class App {
 
     public static void main(String[] args) {
         ArrayList<Figure> figureArrayList = new ArrayList<>();
-
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Please input number of figures");
-//        int figuresQuantity = scanner.nextInt();
-//        for (int i = 0; i < figuresQuantity; i++) {
-//            figureArrayList.add(getRandFigure());
-//        }
         for (int i = 0; i < getRandInt(1, 20); i++) {
             figureArrayList.add(getRandFigure());
         }
-        for (Figure figure : figureArrayList) {
-            System.out.println(figure);
-        }
-        for (Figure figure : figureArrayList) {
-            figure.draw();
-        }
+        figureArrayList.forEach(System.out::println);
+        figureArrayList.forEach(drawAble::draw);
     }
 
     /**
